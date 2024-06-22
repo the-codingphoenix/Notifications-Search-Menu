@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications, Search, & Menu</title>
+    <!-- favicon -->
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/f3726a4d63.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="frame">
+        <div class="container">
+            <div class="header">
+                <div class="menu-icon">
+                    <div class="dash-top"></div>
+                    <div class="dash-bottom"></div>
+                    <div class="circle"></div>
+                </div>
+                <span class="title">Notifications</span>
+                <input type="text" class="search-input" placeholder="Search ...">
+                <div class="fa fa-search search-icon"></div>
+            </div>
+              
+            <div class="notifications clearfix">
+                <div class="line"></div>
+                <div class="notification">
+                    <div class="circle"></div>
+                    <span class="time">9:30 AM</span>
+                    <p><b>Jon Simms</b> posted a photo on your wall.</p>
+                </div>
+                <div class="notification">
+                    <div class="circle"></div>
+                    <span class="time">8:30 AM</span>
+                    <p><b>Mary Walker</b> commented your last post.</p>
+                </div>
+                <div class="notification">
+                    <div class="circle"></div>
+                    <span class="time">3:00 PM</span>
+                    <p><b>Andre Barnes</b> commented on your video.</p>
+                </div>
+                <div class="notification">
+                    <div class="circle"></div>
+                    <span class="time">Yesterday</span>
+                    <p><b>Luke Wayne</b> added you as friend.</p>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><span class="fa fa-dashboard"></span>Dashboard</li>
+                <li><span class="fa fa-user"></span>Profile</li>
+                <li><span class="fa fa-bell"></span>Notifications</li>
+                <li><span class="fa fa-comments"></span>Messages</li>
+                <li><span class="fa fa-gear"></span>Settings</li>
+            </ul>
+        </div>      
+    </div>
+
+    <!-- javascript -->
+     <script>
+       document.querySelector(".search-icon").addEventListener("click", function () {
+            const searchInput = document.querySelector(".search-input");
+            searchInput.classList.toggle("active");
+            if (searchInput.classList.contains("active")) {
+                searchInput.focus();
+            }
+        });
+
+        document.querySelector(".menu-icon").addEventListener("click", function () {
+            const menu = document.querySelector(".menu");
+            const panel = document.querySelector(".container");
+            panel.classList.toggle("show-menu");
+            menu.classList.toggle("active");
+        });
+
+    </script>
+</body>
+</html>
